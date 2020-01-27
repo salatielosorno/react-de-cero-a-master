@@ -1,0 +1,14 @@
+.card {
+  border: 1px solid black;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  background: white;
+  color: black;
+  transition: all 400ms ease-out;
+}
+
+.card-active {
+  background: cadetblue;
+  color: white;
+}
