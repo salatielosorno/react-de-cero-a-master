@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import TarjetaFruta from "./componentes/TarjetaFruta";
-import Contador from "./componentes/Contador/Contador";
-import Gato from "./componentes/Gato/Gato";
+import Child from "./componentes/Child/Child";
+import "./global.css";
 
 class App extends Component {
-  render() {
-    const otrosDatos = {
-      raza: "tropical",
-      peleasNocturnas: 300
-    };
+  state = {
+    name: ""
+  };
+  manejador = name => {
+    this.setState({ name });
+  };
 
+  render() {
     return (
-      <div>
-        <Gato name="gato" {...otrosDatos} />
-        <Contador />
-        <TarjetaFruta name={"Sandia"} price={5.0}></TarjetaFruta>
+      <div className="box red">
+        <Child onSaluda={this.manejador} />
+        <h1>Nombre: {this.state.name}</h1>
       </div>
     );
   }
