@@ -1,11 +1,15 @@
 import React, { Component } from "react";
-import Saludo from "./componentes/Saludo/Saludo";
 
 class App extends Component {
+  state = {
+    marcado: `
+      <h1>Inyectando HTML con React</h1>
+    `
+  };
   render() {
     return (
       <div>
-        <Saludo saluda name={"Ninja"} />
+        <div dangerouslySetInnerHTML={{ __html: this.state.marcado }}></div>
       </div>
     );
   }
